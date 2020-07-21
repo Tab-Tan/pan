@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pan.dao.PanFileMapper">
+
+    <insert id="addFile" parameterType="panFile">
+        insert into pan_file values (#{id},#{open},#{url},#{fname},#{uid},#{uptime},#{count},#{colid});
+    </insert>
+
+    <delete id="delById" parameterType="_int">
+        delete from pan_file where id =#{id};
+    </delete>
+
+    <delete id="delInIds" >
+        delete from pan_file
+        <where>
+            id in
+            <foreach collection="list" open="(" separator="," item="item" index="index" close=")">
+                #{item}
+            </foreach>
+        </where>
+    </delete>
+
+
+
+    <select id="queryById" parameterType="_int" resultType="panFile">
+        select *from pan_file where id=#{id};
+    </select>
+
+    <select id="queryByUid" resultType="panFile">
+        select *from pan_file where uid=#{uid};
+    </select>
+
+    <select id="queryByColid"  resultType="panFile">
+        select *from pan_file where colid = #{colid};
+    </select>
+
+    <select id="queryByUidAndColid" parameterType="map" resultType="PanFile">
+        select *from pan_file where uid=#{uid} and colid=#{colid};
+    </select>
+
+    <select id="queryByOpen" resultType="panFile">
+        select *from pan_file where open=#{open};
+    </select>
+
+    <select id="queryByUidAndOpen" resultType="panFile">
+        select *from pan_file where uid=#{uid} and open =#{open};
+    </select>
+
+    <select id="queryInIds" resultType="panFile">
+        select * from pan_file
+        <where>
+            id in
+            <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+    
+    <update id="updateById" parameterType="map">
+        update pan_file set id=#{id},
+        <if test="count!=null and count !=''">
+            count = #{count}
+        </if> where id=#{id};
+    </update>
+
+</mapper>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件管理测试</title>
+    <!--    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <script type="text/javascript" src="./static/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="./static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/js/info.js"></script>
+</head>
+<body>
+<h1 style="text-align: center">---------文件管理测试---------</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel-success">
+                <div class="panel-heading">
+                    上传测试
+                </div>
+                <div class="panel-body">
+                    <form id="formData" action="/upload" enctype="multipart/form-data" method="post">
+                        <input type="file" name="file" class="form-control" />
+                    </form>
+                    <button class="btn btn-success" id="up">上传</button>
+
+                    <div class="layui-card">
+                        <div class="layui-card-header">拖拽上传</div>
+                        <div class="layui-card-body">
+                            <div class="layui-upload-drag" id="test-upload-drag">
+                                <i class="layui-icon"></i>
+                                <p>点击上传，或将文件拖拽到此处</p>
+                            </div><input class="layui-upload-file" type="file" accept="" name="file">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="panel-success">
+                <div class="panel-heading">
+                    <h3><b>下载测试</b></h3>
+                    <div class="panel-group">
+                        <button class="btn btn-danger" id="del">删除</button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>选择</th>
+                                <th>栏目名</th>
+                                <th>文件名</th>
+                                <th>下载量</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tb"></tbody>
+                    </table>
+                    <!--隐藏域存储fileid-->
+                    <input id="h0" value="" hidden />
+                    <input id="h1" value="" hidden />
+                    <input id="h2" value="" hidden />
+                    <input id="h3" value="" hidden />
+                    <input id="h4" value="" hidden />
+                    <input id="h5" value="" hidden />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h1 style="text-align: center">---------社区功能测试---------</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-offset-2">
+            <div class="panel-success">
+                <div class="panel-heading">
+                    <h3><b>下载测试</b></h3>
+                    <div class="panel-group">
+                        <button class="btn btn-danger" id="sdel">删除</button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>选择</th>
+                            <th>栏目名</th>
+                            <th>文件名</th>
+                            <th>下载量</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="stb"></tbody>
+                    </table>
+                    <!--隐藏域存储fileid-->
+                    <input id="sh0" value="" hidden />
+                    <input id="sh1" value="" hidden />
+                    <input id="sh2" value="" hidden />
+                    <input id="sh3" value="" hidden />
+                    <input id="sh4" value="" hidden />
+                    <input id="sh5" value="" hidden />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

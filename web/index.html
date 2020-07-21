@@ -1,0 +1,75 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>首页</title>
+    <link rel="stylesheet" href="static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+
+  <body>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4 col-md-offset-2">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            登录测试
+          </div>
+          <div class="panel-body">
+            <form action="/login" method="post">
+              <input type="text" name="username" class="form-control" />
+              <input type="password" name="password" class="form-control" />
+              <button type="submit" class="form-control btn btn-success">提交</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class=" col-md-4">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              注册测试
+            </div>
+            <div class="panel-body">
+              <form action="/register" method="post" >
+                <input type="text" name="username" class="form-control" />
+                <input type="password" name="password" class="form-control"/>
+                <button type="submit" class="form-control btn btn-success">注册</button>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        <div class="panel-info">
+          <div class="panel-heading">
+            更新测试
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>账号</th>
+                  <th>密码</th>
+                  <th>昵称</th>
+                  <th>个签</th>
+                </tr>
+              </thead>
+              <tbody id="tb"></tbody>
+              <tfoot>
+                <button class="btn btn-success" id="xg">修改</button>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </body>
+</html>
